@@ -11,7 +11,7 @@ git clone --recurse-submodules git@github.com:Anon/few-shot-adaptation.git
 ## UnpredicTable dataset
 
 ### Download
-Our datasets are available [on the HuggingFace Hub](https://huggingface.co/datasets/MicPie/unpredictable_full). We provide the complete dataset `UnpredicTable-full` as well as the various sub-distributions discussed in our paper, for a total of 57 dataset options.
+Our datasets are available [on the HuggingFace Hub](https://huggingface.co/datasets/unpredictable/unpredictable_full). We provide the complete dataset `UnpredicTable-full` as well as the various sub-distributions discussed in our paper, for a total of 57 dataset options.
 
 To download a dataset, simply `pip install datasets` and download the dataset using `load_dataset`:
 ```python
@@ -19,40 +19,40 @@ from datasets import load_dataset
 
 distribution_names = [
     # Full dataset
-    "MicPie/unpredictable_full",
+    "unpredictable/unpredictable_full",
     # 5k random tasks from full dataset
-    "MicPie/unpredictable_5k",
+    "unpredictable/unpredictable_5k",
     # Filtered to 1 task per website
-    "MicPie/unpredictable_unique",
+    "unpredictable/unpredictable_unique",
     #  Single website tasks
-    "MicPie/unpredictable_baseball-fantasysports-yahoo-com",
-    "MicPie/unpredictable_bulbapedia-bulbagarden-net",
-    "MicPie/unpredictable_cappex-com",
-    "MicPie/unpredictable_cram-com",
-    "MicPie/unpredictable_dividend-com",
-    "MicPie/unpredictable_dummies-com",
-    "MicPie/unpredictable_en-wikipedia-org",
-    "MicPie/unpredictable_ensembl-org",
-    "MicPie/unpredictable_gamefaqs-com",
-    "MicPie/unpredictable_mgoblog-com",
-    "MicPie/unpredictable_mmo-champion-com",
-    "MicPie/unpredictable_msdn-microsoft-com",
-    "MicPie/unpredictable_phonearena-com",
-    "MicPie/unpredictable_sittercity-com",
-    "MicPie/unpredictable_sporcle-com",
-    "MicPie/unpredictable_studystack-com",
-    "MicPie/unpredictable_support-google-com",
-    "MicPie/unpredictable_w3-org",
-    "MicPie/unpredictable_wiki-openmoko-org",
-    "MicPie/unpredictable_wkdu-org",
+    "unpredictable/unpredictable_baseball-fantasysports-yahoo-com",
+    "unpredictable/unpredictable_bulbapedia-bulbagarden-net",
+    "unpredictable/unpredictable_cappex-com",
+    "unpredictable/unpredictable_cram-com",
+    "unpredictable/unpredictable_dividend-com",
+    "unpredictable/unpredictable_dummies-com",
+    "unpredictable/unpredictable_en-wikipedia-org",
+    "unpredictable/unpredictable_ensembl-org",
+    "unpredictable/unpredictable_gamefaqs-com",
+    "unpredictable/unpredictable_mgoblog-com",
+    "unpredictable/unpredictable_mmo-champion-com",
+    "unpredictable/unpredictable_msdn-microsoft-com",
+    "unpredictable/unpredictable_phonearena-com",
+    "unpredictable/unpredictable_sittercity-com",
+    "unpredictable/unpredictable_sporcle-com",
+    "unpredictable/unpredictable_studystack-com",
+    "unpredictable/unpredictable_support-google-com",
+    "unpredictable/unpredictable_w3-org",
+    "unpredictable/unpredictable_wiki-openmoko-org",
+    "unpredictable/unpredictable_wkdu-org",
     # Single cluster tasks
-    "MicPie/unpredictable_cluster00", "MicPie/unpredictable_cluster01", "MicPie/unpredictable_cluster02", "MicPie/unpredictable_cluster03", "MicPie/unpredictable_cluster04", "MicPie/unpredictable_cluster05", "MicPie/unpredictable_cluster06", "MicPie/unpredictable_cluster07", "MicPie/unpredictable_cluster08", "MicPie/unpredictable_cluster09", "MicPie/unpredictable_cluster10", "MicPie/unpredictable_cluster11", "MicPie/unpredictable_cluster12", "MicPie/unpredictable_cluster13", "MicPie/unpredictable_cluster14", "MicPie/unpredictable_cluster15", "MicPie/unpredictable_cluster16", "MicPie/unpredictable_cluster17", "MicPie/unpredictable_cluster18", "MicPie/unpredictable_cluster19", "MicPie/unpredictable_cluster20", "MicPie/unpredictable_cluster21", "MicPie/unpredictable_cluster22", "MicPie/unpredictable_cluster23", "MicPie/unpredictable_cluster24", "MicPie/unpredictable_cluster25", "MicPie/unpredictable_cluster26", "MicPie/unpredictable_cluster27", "MicPie/unpredictable_cluster28", "MicPie/unpredictable_cluster29", "MicPie/unpredictable_cluster-noise", 
+    "unpredictable/unpredictable_cluster00", "unpredictable/unpredictable_cluster01", "unpredictable/unpredictable_cluster02", "unpredictable/unpredictable_cluster03", "unpredictable/unpredictable_cluster04", "unpredictable/unpredictable_cluster05", "unpredictable/unpredictable_cluster06", "unpredictable/unpredictable_cluster07", "unpredictable/unpredictable_cluster08", "unpredictable/unpredictable_cluster09", "unpredictable/unpredictable_cluster10", "unpredictable/unpredictable_cluster11", "unpredictable/unpredictable_cluster12", "unpredictable/unpredictable_cluster13", "unpredictable/unpredictable_cluster14", "unpredictable/unpredictable_cluster15", "unpredictable/unpredictable_cluster16", "unpredictable/unpredictable_cluster17", "unpredictable/unpredictable_cluster18", "unpredictable/unpredictable_cluster19", "unpredictable/unpredictable_cluster20", "unpredictable/unpredictable_cluster21", "unpredictable/unpredictable_cluster22", "unpredictable/unpredictable_cluster23", "unpredictable/unpredictable_cluster24", "unpredictable/unpredictable_cluster25", "unpredictable/unpredictable_cluster26", "unpredictable/unpredictable_cluster27", "unpredictable/unpredictable_cluster28", "unpredictable/unpredictable_cluster29", "unpredictable/unpredictable_cluster-noise", 
     # Manual-rated tasks
-    "MicPie/unpredictable_rated-low", "MicPie/unpredictable_rated-medium", "MicPie/unpredictable_rated-high",
+    "unpredictable/unpredictable_rated-low", "unpredictable/unpredictable_rated-medium", "unpredictable/unpredictable_rated-high",
 ]
 
 # Get the 5k sample dataset
-dataset = load_dataset('MicPie/unpredictable_5k')
+dataset = load_dataset('unpredictable/unpredictable_5k')
 ```
 
 We provide a demo of loading and inspecting tasks from the dataset at `dataset_demo.ipynb`. Click the badge below to try it out with Colab!
@@ -103,11 +103,11 @@ The weights for our fine-tuned GPT2-large model can be downloaded below:
 
 To train your own models, please follow the instructions in the "Training" section of `MetaICL/README.md`.
 
-For training on our task datasets, you can use the HuggingFace dataset path with the prefix "huggingface:" as the `$task`. For example, to train on `MicPie/unpredictable_5k`, use
+For training on our task datasets, you can use the HuggingFace dataset path with the prefix "huggingface:" as the `$task`. For example, to train on `unpredictable/unpredictable_5k`, use
 ```bash
 cd MetaICL/
 
-task="huggingface:MicPie/unpredictable_5k"
+task="huggingface:unpredictable/unpredictable_5k"
 python train.py \
   --task $task --k 16384 --test_k 16 --seed 100 --use_demonstrations --method channel \
   --do_tensorize --n_gpu 8 --n_process 40
